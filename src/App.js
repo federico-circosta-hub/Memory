@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState } from "react";
+import { Game } from "./components/Game";
+import { columns, rows } from "./utils/functions/setGameSize";
+import { ChooseDifficulty } from "./components/ChooseDifficulty";
 
 function App() {
+  const [difficulty, setDifficulty] = useState("hard");
+  const [r, setRows] = useState(rows(difficulty));
+  const [c, setCol] = useState(columns(difficulty));
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="p-8 flex flex-col justify-center align-center">
+      <ChooseDifficulty setDifficulty={setDifficulty} />
+      <Game rows={r} col={c} />
     </div>
   );
 }
