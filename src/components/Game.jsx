@@ -35,7 +35,7 @@ export const Game = ({ rows, col }) => {
       row = [];
     }
     setAACardsContent(cardsContent);
-  }, [reload]);
+  }, [reload, col, rows]);
 
   useEffect(() => {
     if (selectedCards.length === 2) {
@@ -50,7 +50,7 @@ export const Game = ({ rows, col }) => {
         ]);
     }
     if (guessedCards === rows * col) setCompleted(true);
-  }, [selectedCards]);
+  }, [selectedCards, col, rows, guessedCards]);
 
   return AACardsContent.length === 0 ? (
     <CircularProgress />
