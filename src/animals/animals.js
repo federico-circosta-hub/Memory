@@ -4,8 +4,8 @@ export const animals = [
     media: require("../imgs/cat.jpeg"),
   },
   {
-    name: "bird",
-    media: require("../imgs/bird.jpeg"),
+    name: "parakeet",
+    media: require("../imgs/parakeet.jpeg"),
   },
   {
     name: "chick",
