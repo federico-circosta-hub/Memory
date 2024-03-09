@@ -1,86 +1,86 @@
 export const animals = [
   {
     name: "cat",
-    media: require("../../public/imgs/cat.jpeg"),
+    media: require("../media/animalImages/cat.jpeg"),
   },
   {
     name: "parakeet",
-    media: require("../../public/imgs/parakeet.jpeg"),
+    media: require("../media/animalImages/parakeet.jpeg"),
   },
   {
     name: "chick",
-    media: require("../../public/imgs/chick.jpeg"),
+    media: require("../media/animalImages/ural-owl.jpeg"),
   },
   {
     name: "deer",
-    media: require("../../public/imgs/deer.jpeg"),
+    media: require("../media/animalImages/deer.jpeg"),
   },
   {
     name: "dolphin",
-    media: require("../../public/imgs/dolphin.jpeg"),
+    media: require("../media/animalImages/dolphin.jpeg"),
   },
   {
     name: "dove",
-    media: require("../../public/imgs/dove.jpeg"),
+    media: require("../media/animalImages/dove.jpeg"),
   },
   {
     name: "eagle",
-    media: require("../../public/imgs/eagle.jpeg"),
+    media: require("../media/animalImages/eagle.jpeg"),
   },
   {
     name: "elephant",
-    media: require("../../public/imgs/elephant.jpeg"),
+    media: require("../media/animalImages/elephant.jpeg"),
   },
   {
     name: "fox",
-    media: require("../../public/imgs/fox.jpeg"),
+    media: require("../media/animalImages/fox.jpeg"),
   },
   {
     name: "giraffe",
-    media: require("../../public/imgs/giraffe.jpeg"),
+    media: require("../media/animalImages/giraffe.jpeg"),
   },
   {
     name: "horse",
-    media: require("../../public/imgs/horse.jpeg"),
+    media: require("../media/animalImages/horse.jpeg"),
   },
   {
     name: "jelly-fish",
-    media: require("../../public/imgs/jelly-fish.jpeg"),
+    media: require("../media/animalImages/jelly-fish.jpeg"),
   },
   {
     name: "lion",
-    media: require("../../public/imgs/lion.jpeg"),
+    media: require("../media/animalImages/lion.jpeg"),
   },
   {
     name: "panda",
-    media: require("../../public/imgs/panda.jpeg"),
+    media: require("../media/animalImages/panda.jpeg"),
   },
   {
     name: "penguin",
-    media: require("../../public/imgs/penguin.jpeg"),
+    media: require("../media/animalImages/penguin.jpeg"),
   },
   {
     name: "rabbit",
-    media: require("../../public/imgs/rabbit.jpeg"),
+    media: require("../media/animalImages/rabbit.jpeg"),
   },
   {
     name: "squirrel",
-    media: require("../../public/imgs/squirrel.jpeg"),
+    media: require("../media/animalImages/squirrel.jpeg"),
   },
   {
     name: "tiger",
-    media: require("../../public/imgs/tiger.jpeg"),
+    media: require("../media/animalImages/tiger.jpeg"),
   },
   {
     name: "ural-owl",
-    media: require("../../public/imgs/ural-owl.jpeg"),
+    media: require("../media/animalImages/ural-owl.jpeg"),
   },
   {
     name: "wolf",
-    media: require("../../public/imgs/wolf.jpeg"),
+    media: require("../media/animalImages/wolf.jpeg"),
   },
   {
     name: "yak",
-    media: require("../../public/imgs/yak.jpeg"),
+    media: require("../media/animalImages/yak.jpeg"),
   },
 ];

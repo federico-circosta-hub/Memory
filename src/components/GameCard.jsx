@@ -3,7 +3,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import questionMark from "../../public/img/questionCard.jpeg";
+import questionMark from "../media/miscImages/questionCard.jpeg";
 
 export const GameCard = ({
   animal,
