@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { changeDifficulty } from "../gameSlice/gameSlice";
 import { Score } from "./Score";
 import { theme } from "../Themes/CustomMuiTheme";
-//import { changeDifficulty } from "../gameSlice/gameSlice";
 
 export const ChooseDifficulty = () => {
   const dispatch = useDispatch();
@@ -16,6 +15,7 @@ export const ChooseDifficulty = () => {
   const handleChangeDifficulty = (s) => {
     dispatch(changeDifficulty(s));
   };
+
   return (
     <div className="flex flex-col w-fit p-4 mx-auto  items-center justify-center gap-3 bg-primary rounded-2xl">
       <ThemeProvider theme={theme}>

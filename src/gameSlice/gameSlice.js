@@ -7,13 +7,27 @@ const gameSlice = createSlice({
     score: 0,
   },
   reducers: {
+    newGame: (state) => {
+      state.score = 0;
+    },
     changeDifficulty: (state, param) => {
       const { payload } = param;
       state.difficulty = gameSize(payload);
       state.score = 0;
     },
+    increaseScoreGuessedCards: (state) => {
+      state.score = state.score + 100;
+    },
+    decreaseScore: (state) => {
+      state.score = state.score - 25;
+    },
   },
 });
 const { actions, reducer } = gameSlice;
-export const { changeDifficulty } = actions;
+export const {
+  changeDifficulty,
+  increaseScoreGuessedCards,
+  decreaseScore,
+  newGame,
+} = actions;
 export default reducer;

@@ -3,7 +3,12 @@ import { GameCard } from "./GameCard";
 import { getGameGrid } from "../utils/functions/gameDeck";
 import { CircularProgress } from "@mui/material";
 import { WinModal } from "./WinModal";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  decreaseScore,
+  increaseScoreGuessedCards,
+  newGame,
+} from "../gameSlice/gameSlice";
 
 export const Game = () => {
   const [gameGrid, setGameGrid] = useState([]);
@@ -14,20 +19,36 @@ export const Game = () => {
   const [reload, setReload] = useState(0);
 
   const { row, col } = useSelector((state) => state.difficulty);
+  const dispatch = useDispatch();
+
+  const increaseTurnCount = (cardId) => {
+    const updatedGrid = gameGrid.map((row) =>
+      row.map((card) =>
+        card.id === cardId ? { ...card, turnCount: card.turnCount + 1 } : card
+      )
+    );
+    setGameGrid(updatedGrid);
+  };
 
   useEffect(() => {
+    dispatch(newGame());
     const grid = getGameGrid(row, col);
     setGameGrid(grid);
-  }, [reload, col, row]);
+  }, [reload, col, row, dispatch]);
 
   useEffect(() => {
+    selectedCards.length === 1 &&
+      selectedCards[0].turnCount > 1 &&
+      dispatch(decreaseScore());
     if (selectedCards.length === 2) {
+      selectedCards[1].turnCount > 1 && dispatch(decreaseScore());
       setBlocking(true);
       setTimeout(() => {
         setSelectedCards([]);
         setBlocking(false);
       }, 1500);
       if (selectedCards[0].animal.name === selectedCards[1].animal.name) {
+        dispatch(increaseScoreGuessedCards());
         setGuessedCards((prevState) => [
           ...prevState,
           selectedCards[0].id,
@@ -35,7 +56,7 @@ export const Game = () => {
         ]);
       }
     }
-  }, [selectedCards]);
+  }, [selectedCards, dispatch]);
 
   useEffect(() => {
     if (guessedCards.length === row * col) setCompleted(true);
@@ -52,6 +73,7 @@ export const Game = () => {
     <CircularProgress />
   ) : (
     <div className="flex flex-col w-full">
+      {console.log("selectedCards", selectedCards)}
       {gameGrid.map((e) => (
         <div className="flex flex-row">
           {e.map((c) => (
@@ -59,6 +81,8 @@ export const Game = () => {
               blocking={blocking}
               animal={c.animal}
               id={c.id}
+              turnCount={c.turnCount}
+              increaseTurnCount={increaseTurnCount}
               selectedCards={selectedCards}
               setSelectedCards={setSelectedCards}
               guessedCards={guessedCards}

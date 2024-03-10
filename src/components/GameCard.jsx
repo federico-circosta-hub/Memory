@@ -12,6 +12,8 @@ export const GameCard = ({
   setSelectedCards,
   guessedCards,
   blocking,
+  turnCount,
+  increaseTurnCount,
 }) => {
   return (
     <Card className="m-2 h-48 w-48 card transition-transform duration-500 ease-in-out transform hover:rotate-y-10 hover:scale-110">
@@ -44,10 +46,15 @@ export const GameCard = ({
       ) : (
         <CardContent>
           <CardMedia
-            onClick={() =>
-              !blocking &&
-              setSelectedCards((prevState) => [...prevState, { animal, id }])
-            }
+            onClick={() => {
+              if (!blocking) {
+                increaseTurnCount(id);
+                setSelectedCards((prevState) => [
+                  ...prevState,
+                  { animal, id, turnCount },
+                ]);
+              }
+            }}
             className="h-40 w-48 object-cover"
             component="img"
             alt={"question-mark"}

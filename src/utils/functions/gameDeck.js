@@ -22,6 +22,7 @@ export const getGameGrid = (rowsN, colsN) => {
       line.push({
         animal: gameDeck[deckIndex],
         id: deckIndex,
+        turnCount: 0,
       });
       deckIndex++;
     }
