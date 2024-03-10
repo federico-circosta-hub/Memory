@@ -4,53 +4,65 @@ import { animals } from "../animals/animals";
 import { getGameDeck } from "../utils/functions/setGameDeck";
 import { CircularProgress } from "@mui/material";
 import { WinModal } from "./WinModal";
+import { useSelector } from "react-redux";
 
-export const Game = ({ rows, col }) => {
+export const Game = () => {
   const [AACardsContent, setAACardsContent] = useState([]);
   const [selectedCards, setSelectedCards] = useState([]);
+  const [blocking, setBlocking] = useState(false);
   const [guessedCards, setGuessedCards] = useState([]);
-  const [completed, setCompleted] = useState(true);
+  const [completed, setCompleted] = useState(false);
   const [reload, setReload] = useState(0);
 
+  const { row, col } = useSelector((state) => state.difficulty);
+
   const restart = () => {
+    setSelectedCards([]);
+    setGuessedCards([]);
     setCompleted(false);
     setReload((prevState) => prevState + 1);
   };
 
   useEffect(() => {
     const shuffledAnimals = animals.sort(() => Math.random() - 0.5);
-    const gameDeck = getGameDeck(shuffledAnimals, rows, col);
+    const gameDeck = getGameDeck(shuffledAnimals, row, col);
     let cardsContent = [];
-    let row = [];
+    let r = [];
     let deckIndex = 0;
-    for (let i = 0; i < rows; i++) {
+    for (let i = 0; i < row; i++) {
       for (let ii = 0; ii < col; ii++) {
-        row.push({
+        r.push({
           animal: gameDeck[deckIndex],
           id: deckIndex,
         });
         deckIndex++;
       }
-      cardsContent.push(row);
-      row = [];
+      cardsContent.push(r);
+      r = [];
     }
     setAACardsContent(cardsContent);
-  }, [reload, col, rows]);
+  }, [reload, col, row]);
 
   useEffect(() => {
     if (selectedCards.length === 2) {
+      setBlocking(true);
       setTimeout(() => {
         setSelectedCards([]);
+        setBlocking(false);
       }, 1500);
-      selectedCards[0].animal.name === selectedCards[1].animal.name &&
+      if (selectedCards[0].animal.name === selectedCards[1].animal.name) {
         setGuessedCards((prevState) => [
           ...prevState,
           selectedCards[0].id,
           selectedCards[1].id,
         ]);
+      }
     }
-    if (guessedCards === rows * col) setCompleted(true);
-  }, [selectedCards, col, rows, guessedCards]);
+  }, [selectedCards]);
+
+  useEffect(() => {
+    if (guessedCards.length === row * col) setCompleted(true);
+  }, [guessedCards, row, col]);
 
   return AACardsContent.length === 0 ? (
     <CircularProgress />
@@ -60,6 +72,7 @@ export const Game = ({ rows, col }) => {
         <div className="flex flex-row">
           {e.map((c) => (
             <GameCard
+              blocking={blocking}
               animal={c.animal}
               id={c.id}
               selectedCards={selectedCards}

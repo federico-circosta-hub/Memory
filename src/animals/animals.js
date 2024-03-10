@@ -9,7 +9,7 @@ export const animals = [
   },
   {
     name: "chick",
-    media: require("../media/animalImages/ural-owl.jpeg"),
+    media: require("../media/animalImages/chick.jpeg"),
   },
   {
     name: "deer",

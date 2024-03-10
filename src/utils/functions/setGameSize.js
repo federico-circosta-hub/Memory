@@ -1,21 +1,10 @@
-export const rows = (s) => {
+export const gameSize = (s) => {
   switch (s) {
     case "easy":
-      return 2;
+      return { level: "easy", row: 2, col: 3 };
+    case "medium":
+      return { level: "medium", row: 3, col: 4 };
     default:
-      return 3;
-    case "hard":
-      return 4;
-  }
-};
-
-export const columns = (s) => {
-  switch (s) {
-    case "easy":
-      return 3;
-    default:
-      return 4;
-    case "hard":
-      return 4;
+      return { level: "hard", row: 3, col: 6 };
   }
 };
