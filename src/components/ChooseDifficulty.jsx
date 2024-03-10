@@ -20,7 +20,7 @@ export const ChooseDifficulty = () => {
     <div className="flex flex-col w-fit p-4 mx-auto  items-center justify-center gap-3 bg-primary rounded-2xl">
       <ThemeProvider theme={theme}>
         <ButtonGroup variant="text" className="flex flex-row">
-          <h2 className="text-xl mx-4 font-bold text-secondary animate-pulse-slowly">
+          <h2 className="text-xl mx-4 font-bold text-tertiary animate-pulse-slowly">
             Choose difficulty
           </h2>
           <Button
