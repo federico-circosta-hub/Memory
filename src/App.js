@@ -6,11 +6,17 @@ import { ChooseDifficulty } from "./components/ChooseDifficulty";
 function App() {
   return (
     <div
-      style={{ height: "100vh", overflow: "auto" }}
-      className='vignette p-8 flex flex-col justify-start align-center bg-[url("./media/miscImages/questioning-concept-with-question-mark_23-2150408209.avif")] bg-no-repeat bg-cover bg-center'
+      style={{ height: "100vh" }}
+      className='w-full overflow-x-auto flex justify-start bg-[url("./media/miscImages/questioning-concept-with-question-mark_23-2150408209.avif")] bg-no-repeat bg-cover bg-center'
     >
-      <ChooseDifficulty />
-      <Game />
+      <div className="vignette p-6 flex flex-col items-center overflow-auto">
+        <div>
+          <ChooseDifficulty />
+        </div>
+        <div className="max-w-full">
+          <Game />
+        </div>
+      </div>
     </div>
   );
 }

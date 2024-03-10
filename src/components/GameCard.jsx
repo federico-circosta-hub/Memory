@@ -14,7 +14,7 @@ export const GameCard = ({
   blocking,
 }) => {
   return (
-    <Card className="m-4 h-48 w-48 card transition-transform duration-500 ease-in-out transform focus:rotate-y-10 hover:scale-110">
+    <Card className="m-2 h-48 w-48 card transition-transform duration-500 ease-in-out transform hover:rotate-y-10 hover:scale-110">
       {selectedCards.some((obj) => obj.id === id) ? (
         <CardContent>
           <CardMedia
@@ -23,7 +23,7 @@ export const GameCard = ({
             alt={animal.name}
             image={animal.media}
           />
-          <div className="m-1">
+          <div className="mt-1">
             <Typography variant="p">{animal.name}</Typography>
           </div>
         </CardContent>
@@ -48,14 +48,14 @@ export const GameCard = ({
               !blocking &&
               setSelectedCards((prevState) => [...prevState, { animal, id }])
             }
-            className="h-36 w-32 object-cover"
+            className="h-40 w-48 object-cover"
             component="img"
             alt={"question-mark"}
             image={questionMark}
           />
-          <div className="m-1">
-            <Typography variant="p">Memory</Typography>
-          </div>
+          {/* <div className="mt-1">
+            <Typography variant="p">Easy memory</Typography>
+          </div> */}
         </CardContent>
       )}
     </Card>

@@ -51,7 +51,7 @@ export const Game = () => {
   return gameGrid.length === 0 ? (
     <CircularProgress />
   ) : (
-    <div className="flex flex-col w-full justify-center items-center">
+    <div className="flex flex-col w-full">
       {gameGrid.map((e) => (
         <div className="flex flex-row">
           {e.map((c) => (

@@ -83,4 +83,76 @@ export const animals = [
     name: "yak",
     media: require("../media/animalImages/yak.jpeg"),
   },
+  {
+    name: "ant",
+    media: require("../media/animalImages/ant.jpeg"),
+  },
+  {
+    name: "bear",
+    media: require("../media/animalImages/bear.jpeg"),
+  },
+  {
+    name: "bee",
+    media: require("../media/animalImages/bee.jpeg"),
+  },
+  {
+    name: "butterfly",
+    media: require("../media/animalImages/butterfly.jpeg"),
+  },
+  {
+    name: "crocodile",
+    media: require("../media/animalImages/crocodile.jpeg"),
+  },
+  {
+    name: "dog",
+    media: require("../media/animalImages/dog.jpeg"),
+  },
+  {
+    name: "fish",
+    media: require("../media/animalImages/fish.jpeg"),
+  },
+  {
+    name: "frog",
+    media: require("../media/animalImages/frog.jpeg"),
+  },
+  {
+    name: "leopard",
+    media: require("../media/animalImages/leopard.jpeg"),
+  },
+  {
+    name: "monkey",
+    media: require("../media/animalImages/monkey.jpeg"),
+  },
+  {
+    name: "panther",
+    media: require("../media/animalImages/panther.jpeg"),
+  },
+  {
+    name: "parrot",
+    media: require("../media/animalImages/parrot.jpeg"),
+  },
+  {
+    name: "peacock",
+    media: require("../media/animalImages/peacock.jpeg"),
+  },
+  {
+    name: "shark",
+    media: require("../media/animalImages/shark.jpeg"),
+  },
+  {
+    name: "snake",
+    media: require("../media/animalImages/snake.jpeg"),
+  },
+  {
+    name: "turtle",
+    media: require("../media/animalImages/turtle.jpeg"),
+  },
+  {
+    name: "toucan",
+    media: require("../media/animalImages/toucan.jpeg"),
+  },
+  {
+    name: "zebra",
+    media: require("../media/animalImages/zebra.jpeg"),
+  },
 ];

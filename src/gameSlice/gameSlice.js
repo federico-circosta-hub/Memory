@@ -3,7 +3,7 @@ import { gameSize } from "../utils/functions/setGameSize";
 const gameSlice = createSlice({
   name: "game",
   initialState: {
-    difficulty: { level: "easy", row: 2, col: 3 },
+    difficulty: { level: "easy", row: 3, col: 4 },
     score: 0,
   },
   reducers: {
