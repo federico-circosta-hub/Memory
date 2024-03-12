@@ -10,7 +10,7 @@ import { theme } from "../Themes/CustomMuiTheme";
 
 export const ChooseDifficulty = () => {
   const dispatch = useDispatch();
-  const difficulty = useSelector((state) => state.difficulty.level);
+  const difficulty = useSelector((state) => state.game.difficulty.level);
 
   const handleChangeDifficulty = (s) => {
     dispatch(changeDifficulty(s));

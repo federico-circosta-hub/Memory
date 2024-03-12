@@ -18,7 +18,7 @@ export const Game = () => {
   const [completed, setCompleted] = useState(false);
   const [reload, setReload] = useState(0);
 
-  const { row, col } = useSelector((state) => state.difficulty);
+  const { row, col } = useSelector((state) => state.game.difficulty);
   const dispatch = useDispatch();
 
   const increaseTurnCount = (cardId) => {
@@ -73,7 +73,6 @@ export const Game = () => {
     <CircularProgress />
   ) : (
     <div className="flex flex-col w-full">
-      {console.log("selectedCards", selectedCards)}
       {gameGrid.map((e) => (
         <div className="flex flex-row">
           {e.map((c) => (
