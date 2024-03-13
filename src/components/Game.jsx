@@ -46,7 +46,7 @@ export const Game = () => {
       setTimeout(() => {
         setSelectedCards([]);
         setBlocking(false);
-      }, 1500);
+      }, 1000);
       if (selectedCards[0].animal.name === selectedCards[1].animal.name) {
         dispatch(increaseScoreGuessedCards());
         setGuessedCards((prevState) => [

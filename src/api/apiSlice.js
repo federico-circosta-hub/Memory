@@ -9,8 +9,9 @@ export const scoreApi = createApi({
   endpoints: (builder) => ({
     getScore: builder.query({
       query: () => "get/score",
+      providesTags: ["score"],
     }),
-    providesTags: ["score"],
+
     postScore: builder.mutation({
       query: (data) => ({
         url: "post/score",
