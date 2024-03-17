@@ -7,7 +7,7 @@ function App() {
   return (
     <div
       style={{ height: "100vh" }}
-      className="w-full overflow-x-auto flex justify-start  bg-primary bg-no-repeat bg-cover bg-center" //bg-[url("./media/miscImages/questioning-concept-with-question-mark_23-2150408209.avif")]
+      className="w-full overflow-x-auto flex justify-start  bg-primary bg-no-repeat bg-cover bg-center"
     >
       <div className="vignette p-8 flex flex-col items-center overflow-auto">
         <div>
