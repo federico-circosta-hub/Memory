@@ -2,8 +2,10 @@ import "./App.css";
 import React from "react";
 import { Game } from "./components/Game";
 import { ChooseDifficulty } from "./components/ChooseDifficulty";
+import { useWakeUpServerQuery } from "./api/apiSlice";
 
 function App() {
+  useWakeUpServerQuery();
   return (
     <div
       style={{ height: "100vh" }}
