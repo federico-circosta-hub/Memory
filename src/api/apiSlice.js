@@ -7,6 +7,9 @@ export const scoreApi = createApi({
   }),
   tagTypes: ["score"],
   endpoints: (builder) => ({
+    wakeUpServer: builder.query({
+      query: () => "wakeUpServer",
+    }),
     getScore: builder.query({
       query: () => "get/score",
       providesTags: ["score"],
@@ -23,4 +26,5 @@ export const scoreApi = createApi({
   }),
 });
 
-export const { useGetScoreQuery, usePostScoreMutation } = scoreApi;
+export const { useWakeUpServerQuery, useGetScoreQuery, usePostScoreMutation } =
+  scoreApi;
